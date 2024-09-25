@@ -17,5 +17,11 @@ pipeline {
         sh 'node --version'
       }
     }
+    stage('database') {
+      agent {
+        docker { image 'mysql:16-alpine' }
+      }
+      steps {
+        sh 'select*from xyz'
   }
 }
